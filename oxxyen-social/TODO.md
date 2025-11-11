@@ -1,0 +1,117 @@
+# OXXYEN SOCIAL - TODO
+
+## Completed ✅
+- [x] Implement end-to-end encryption for messages (AES-256-GCM + RSA key exchange)
+- [x] Add email verification for new users
+- [x] Enhance password security (complexity requirements, min 8 chars, uppercase, lowercase, number)
+- [x] Add friend request system with accept/reject functionality
+- [x] Implement email verification system with SMTP validation
+- [x] Add email validation during registration (SMTP check)
+- [x] Add E2E encryption for posts and comments
+- [x] Update database models for E2E encryption (Message, Post, User)
+- [x] Update API routes for E2E encryption (auth, users, chats)
+- [x] Update Socket.IO for E2E encrypted messages
+- [x] Add RSA key pair generation and management
+- [x] Add encrypted private key storage with password-based encryption
+- [x] Implement client-side E2E encryption (frontend integration)
+- [x] Update AuthContext for E2E key management and email verification
+- [x] Update Chat page with E2E encryption/decryption
+- [x] Update Register page with RSA key generation and encryption
+- [x] Update Login page with email verification checks
+- [x] Update Dashboard with E2E encryption indicators and friend management
+- [x] Update Friends page with E2E chat links and friend request management
+
+## High Priority
+- [x] Add file upload with virus scanning and E2E encryption
+  - [x] Update upload middleware for E2E file encryption
+  - [x] Add file encryption/decryption utilities
+  - [x] Update Message model for file metadata
+  - [x] Update Chat page for file upload UI
+  - [x] Add progress bar with sparkle animation
+- [x] Add user status (online/offline/last seen)
+  - [x] Update User model with status fields
+  - [x] Add WebSocket status tracking
+  - [x] Update Chat and Dashboard with status indicators
+  - [x] Add status colors (green/online, gray/offline, yellow/recent)
+- [x] Add message reactions
+  - [x] Update Message model for reactions
+  - [x] Add reaction API endpoints
+  - [x] Update Chat page with reaction UI
+  - [x] Add reaction animations (emoji bounce)
+- [x] Add message search functionality (encrypted search)
+  - [x] Add search API endpoint (client-side decryption)
+  - [x] Update Chat page with search UI
+  - [x] Add search animations (magnifying glass particles)
+  - [x] Highlight search results
+- [ ] Add push notifications
+  - [ ] Implement Web Push API
+  - [ ] Add notification settings in profile
+  - [ ] Add notification types (message, friend request, like)
+  - [ ] Add sound effects and vibration
+
+## Medium Priority
+- [x] Implement rate limiting
+  - [x] Add express-rate-limit configuration
+  - [x] Update error handling for 429 responses
+  - [x] Add rate limit UI feedback
+- [ ] Add group chat E2E encryption (multiple recipients)
+  - [ ] Implement Diffie-Hellman for shared keys
+  - [ ] Update encryption utilities for groups
+  - [ ] Update Chat model for group encryption
+- [x] Add message threads
+  - [x] Update Message model for thread support
+  - [x] Add thread API endpoints
+  - [x] Update Chat page with thread UI
+- [x] Add user blocking functionality
+  - [x] Update User model with blocked users
+  - [x] Add blocking API endpoints
+  - [x] Update chat and search to respect blocks
+- [x] Add message deletion for everyone
+  - [x] Add deletion API with time limits
+  - [x] Update Message model for deletion tracking
+  - [x] Add deletion animations (smoke effect)
+- [x] Add typing indicators
+  - [x] Add WebSocket typing events
+  - [x] Update Chat page with typing UI
+  - [x] Add animated dots
+- [x] Add read receipts
+  - [x] Update Message model for read status
+  - [x] Add read receipt API
+  - [x] Update Chat with read indicators
+- [ ] Add message forwarding
+  - [ ] Add forward API endpoint
+  - [ ] Update Chat with forward UI
+  - [ ] Add forwarded message indicators
+- [x] Add user roles and permissions
+  - [x] Update User model with roles (user/mod/dev)
+  - [x] Add role-based middleware
+  - [x] Add developer badge UI
+- [ ] Add admin panel
+  - [ ] Create admin routes and pages
+  - [ ] Add user management (ban/delete)
+  - [ ] Add statistics dashboard
+  - [ ] Add log viewer with filters
+
+## Low Priority
+- [ ] Add analytics and reporting
+- [ ] Add API documentation (Swagger)
+- [ ] Add unit tests (Jest)
+- [ ] Add integration tests
+- [ ] Add end-to-end tests (Playwright)
+- [ ] Add CI/CD pipeline (GitHub Actions)
+- [ ] Add Docker containerization
+- [ ] Add monitoring (Winston + LogRocket)
+- [ ] Add GDPR compliance (data deletion)
+- [ ] Add accessibility features (WCAG)
+- [ ] Add internationalization (i18n)
+- [ ] Add mobile app (React Native)
+- [ ] Add desktop app (Electron)
+- [ ] Add browser extension
+
+## Design Improvements
+- [ ] Modern UI with gradients and animations
+- [ ] Glassmorphism effects
+- [ ] Framer Motion animations
+- [ ] Improved typography (Inter/JetBrains)
+- [ ] Enhanced login/register pages
+- [ ] Sound effects and haptic feedback

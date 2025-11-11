@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🩵💜  CYBER-HOLO TAILWIND THEME  💜🩵 */
+
+@layer base {
+  :root {
+    --bg-primary: 240 21% 10%;
+    --text-primary: 210 40% 98%;
+    --accent1: 278 92% 60%;
+    --accent2: 210 100% 65%;
+    --accent3: 310 90% 55%;
+  }
+
+  body {
+    @apply bg-[hsl(var(--bg-primary))] text-[hsl(var(--text-primary))] transition-all duration-700 ease-out overflow-x-hidden;
+    background-image: radial-gradient(circle at 20% 20%, rgba(147, 51, 234, 0.15), transparent 60%),
+                      radial-gradient(circle at 80% 80%, rgba(56, 189, 248, 0.15), transparent 60%);
+  }
+}
+
+/* 🌈 COMPONENTS LAYER */
+@layer components {
+
+  /* ⚡️ Holographic Button */
+  .btn-holo {
+    @apply relative px-6 py-3 font-semibold rounded-xl text-white overflow-hidden transition-transform duration-300;
+    background: linear-gradient(135deg, #a855f7, #60a5fa, #ec4899, #8b5cf6);
+    background-size: 300% 300%;
+    animation: holoMove 6s ease infinite;
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.1);
+  }
+
+  .btn-holo:hover {
+    transform: scale(1.07) rotate(-1deg);
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.7), 0 0 80px rgba(59, 130, 246, 0.4);
+  }
+
+  @keyframes holoMove {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* 🧊 Glass Card with floating glow */
+  .card-glass {
+    @apply relative p-8 rounded-2xl backdrop-blur-2xl border border-white/20 shadow-[0_0_40px_rgba(168,85,247,0.2)] transition-transform duration-700;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .card-glass:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 0 50px rgba(99, 102, 241, 0.4), inset 0 0 30px rgba(255, 255, 255, 0.05);
+  }
+
+  .card-glass::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 2rem;
+    background: linear-gradient(90deg, #9333ea, #3b82f6, #ec4899, #9333ea);
+    background-size: 400%;
+    animation: borderGlow 8s linear infinite;
+    z-index: -1;
+    opacity: 0.8;
+    filter: blur(6px);
+  }
+
+  @keyframes borderGlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+  }
+
+  /* 💫 Floating Neon Text */
+  .text-neon {
+    @apply text-4xl font-extrabold tracking-tight text-center relative z-10;
+    text-shadow:
+      0 0 10px #a855f7,
+      0 0 20px #60a5fa,
+      0 0 40px #ec4899,
+      0 0 60px #9333ea;
+    animation: textPulse 3s ease-in-out infinite;
+  }
+
+  @keyframes textPulse {
+    0%, 100% {
+      text-shadow:
+        0 0 10px #a855f7,
+        0 0 20px #60a5fa,
+        0 0 40px #ec4899;
+      transform: scale(1);
+    }
+    50% {
+      text-shadow:
+        0 0 25px #a855f7,
+        0 0 50px #60a5fa,
+        0 0 80px #ec4899;
+      transform: scale(1.05);
+    }
+  }
+
+  /* 🧬 Holographic Border */
+  .holo-border {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  .holo-border::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    background: linear-gradient(130deg, #ff00c8, #00fff2, #a855f7, #38bdf8, #ec4899);
+    background-size: 600% 600%;
+    animation: holoFlow 8s linear infinite;
+    filter: blur(6px);
+    z-index: -1;
+  }
+
+  @keyframes holoFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* ✨ Cyber Spinner */
+  .spinner-cyber {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    border-top-color: #a855f7;
+    animation: spinGlow 1s linear infinite;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.7);
+  }
+
+  @keyframes spinGlow {
+    0% { transform: rotate(0deg); filter: hue-rotate(0deg); }
+    100% { transform: rotate(360deg); filter: hue-rotate(360deg); }
+  }
+
+  /* 🌌 Floating spark particles */
+  .bg-stars {
+    background-image: radial-gradient(white 1px, transparent 1px);
+    background-size: 3px 3px;
+    animation: starsMove 60s linear infinite;
+    opacity: 0.15;
+  }
+
+  @keyframes starsMove {
+    from { background-position: 0 0; }
+    to { background-position: 1000px 1000px; }
+  }
+
+  /* 🪩 Glitch Title */
+  .glitch {
+    @apply text-5xl font-bold uppercase relative text-center;
+    color: #fff;
+    animation: glitchAnim 1s infinite;
+  }
+
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    width: 100%;
+  }
+
+  .glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 magenta;
+    clip: rect(24px, 550px, 90px, 0);
+    animation: glitchTop 1s infinite linear alternate-reverse;
+  }
+
+  .glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 cyan;
+    clip: rect(85px, 9999px, 140px, 0);
+    animation: glitchBottom 1s infinite linear alternate-reverse;
+  }
+
+  @keyframes glitchAnim {
+    0%, 100% { transform: none; }
+    20% { transform: skew(2deg); }
+    40% { transform: skew(-2deg); }
+    60% { transform: skew(1deg); }
+    80% { transform: skew(-1deg); }
+  }
+
+  @keyframes glitchTop {
+    0% { clip: rect(42px, 9999px, 44px, 0); }
+    100% { clip: rect(12px, 9999px, 100px, 0); }
+  }
+
+  @keyframes glitchBottom {
+    0% { clip: rect(82px, 9999px, 140px, 0); }
+    100% { clip: rect(44px, 9999px, 90px, 0); }
+  }
+}
